@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-zinc-900
+}
+
+ .swiper-slide {
+   height: auto !important;
+ }
+
+@layer utilities {
+  @variants responsive {
+    .card::before {
+      background: radial-gradient(500px circle at var(--mouse-x) var(--mouse-y),
+          rgba(255, 255, 255, 0.1),
+          transparent 40%);
+      border-radius: inherit;
+      content: "";
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      transition: opacity 500ms;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 2;
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+  }
+}
