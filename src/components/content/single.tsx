@@ -1,6 +1,6 @@
-import { type Material } from "@prisma/client";
 import { type NextPage } from "next";
 import Markdown from "react-markdown";
+import { type Material } from "u/interfaces/material";
 
 interface Props {
   material: Material

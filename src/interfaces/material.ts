@@ -1,3 +1,4 @@
+import { type Code } from "@prisma/client"
 import { type Course } from "./course"
 
 export interface Material {
@@ -7,6 +8,8 @@ export interface Material {
   sequence: string
   courseId: string
   course: Course
+  code: Code
+  codeId: string
   createdAt: Date
   updatedAt: Date
 }

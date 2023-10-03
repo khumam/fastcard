@@ -1,7 +1,7 @@
 import { type NextPage } from "next";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { type Material } from "@prisma/client";
 import Content from "../content";
+import { type Material } from "u/interfaces/material";
 
 import "swiper/css";
 import 'swiper/css/pagination';

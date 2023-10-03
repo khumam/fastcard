@@ -2,6 +2,7 @@ import { type NextPage } from "next";
 import { useRouter } from "next/router";
 import Base from "u/components/base";
 import CarouselStack from "u/components/carousel";
+import { type Material } from "u/interfaces/material";
 import { api } from "u/utils/api";
 
 const Card: NextPage = () => {
@@ -33,7 +34,7 @@ const Card: NextPage = () => {
       </div>
       <div className="bg-zinc-200 w-full h-px"></div>
       <div className=" bg-zinc-100 py-16">
-        <CarouselStack materials={data?.materials}></CarouselStack>
+        <CarouselStack materials={data?.materials as unknown as Material[]}></CarouselStack>
       </div>
     </Base>
   );

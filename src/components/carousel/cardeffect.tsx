@@ -1,6 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-return */
+/* eslint-disable  @typescript-eslint/non-nullable-type-assertion-style */
+
 import { type NextPage } from "next";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { type Code, type Material } from "@prisma/client";
@@ -20,7 +23,7 @@ const CarouselCardEffect: NextPage<Props> = ({
   material,
   code
 }) => {
-  const swiperRef = useRef(null);
+  const swiperRef = useRef<any>(null);
 
   const handleNext = useCallback(() => {
     if (!swiperRef.current) return;
@@ -31,6 +34,13 @@ const CarouselCardEffect: NextPage<Props> = ({
     if (!swiperRef.current) return;
     swiperRef.current.swiper.slidePrev();
   }, []);
+
+  const codeBlockProps = {
+    text: code?.codes,
+    language: code?.language as string,
+    showLineNumbers: false,
+    theme: dracula
+  };
 
   return (
     <Swiper
@@ -59,7 +69,7 @@ const CarouselCardEffect: NextPage<Props> = ({
           <div className="bg-white p-10 h-full rounded border border-zinc-200 flex flex-col justify-between gap-5" onClick={handlePrev}>
             <div>
               <h1 className="text-2xl font-medium text-gray-600 mb-3">{code?.title}</h1>
-              <CopyBlock text={code?.codes} language={code?.language as string} theme={dracula} />
+              <CopyBlock {...codeBlockProps} />
             </div>
             <div className="w-full flex items-end gap-1 justify-end pt-8">
               <button onClick={handlePrev} className="text-zinc-500 flex gap-1">
