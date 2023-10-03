@@ -17,8 +17,23 @@ const CarouselStack: NextPage<Props> = ({
     <div className="container mx-auto cursor-pointer">
       <Swiper
         centeredSlides
-        slidesPerView={2}
-        spaceBetween={30}>
+        slidesPerView={1}
+        spaceBetween={10}
+        breakpoints={{
+          640: {
+            slidesPerView:1,
+            spaceBetween: 10,
+          },
+          768: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+        }}
+      >
         {
           materials?.map((material) => {
             return <SwiperSlide key={material.id} className="h-full">

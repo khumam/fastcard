@@ -29,7 +29,7 @@ const Base: NextPage<Props> = ({
       </Head>
       <main className="p-5 md:p-0">
         <div className="bg-bg-slate-900">
-          <nav className="container mx-auto py-5 flex justify-between items-center">
+          <nav className="container mx-auto py-5 flex justify-center md:justify-between items-center">
             <div>
               <Link href="https://fastcard.dev">
                 <Image src="/icons/logo.svg" alt="Flashcard" width={22} height={22}></Image>
