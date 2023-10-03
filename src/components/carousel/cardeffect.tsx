@@ -39,7 +39,8 @@ const CarouselCardEffect: NextPage<Props> = ({
     text: code?.codes,
     language: code?.language as string,
     showLineNumbers: false,
-    theme: dracula
+    theme: dracula,
+    wrapLines: true
   };
 
   return (
