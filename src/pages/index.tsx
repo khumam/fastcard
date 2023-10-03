@@ -11,7 +11,6 @@ const CategoryView = (): {
   categories: Category[] | undefined, isCategoryLoading: boolean
 } => {
   const { data, isLoading } = api.categoryRouter.getAll.useQuery();
-  console.log(data);
   return {categories: data, isCategoryLoading: isLoading}
 }
 
@@ -26,7 +25,7 @@ const Home: NextPage = () => {
         <div>
           <div className="flex items-center pt-20 flex-col text-center">
             <h1 className="text-6xl text-transparent bg-gradient-to-tr from-indigo-400 to-indigo-600 font-medium bg-clip-text mb-6">Developer <i>Fast</i> Card</h1>
-            <p className="text-zinc-500 text-md font-light">Flashcard.dev helps you understand the basic knowledge about everything in the developer world.<br></br>We have also built this platform to guide you if you already know the roadmap for your journey.<br></br>Start exploring, or you can also contribute</p>
+            <p className="text-zinc-500 text-md font-light"><b>Fastcard.dev</b> helps you understand the basic knowledge about everything in the developer world.<br></br>We as community have also built this platform to guide you if you already know the roadmap for your journey.<br></br>Start exploring, or you can also contribute</p>
           </div>
         </div>
         {

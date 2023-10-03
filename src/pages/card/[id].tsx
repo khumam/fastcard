@@ -8,7 +8,7 @@ import { api } from "u/utils/api";
 const Card: NextPage = () => {
   const router = useRouter();
   const { data, isLoading } = api.cardRouter.get.useQuery({id: router.query.id as string});
-  console.log(data, isLoading);
+  console.log(isLoading);
   
   return (
     <Base>

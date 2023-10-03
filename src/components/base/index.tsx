@@ -13,25 +13,25 @@ const Base: NextPage<Props> = ({
   return (
     <>
       <Head>
-        <title>Flashcard</title>
+        <title>Flashcard | Developer Guide</title>
         <link rel="icon" type="image/png" href="/favicon.png" />
-        <meta name="description" content="I am a Web Developer and looking for sharing. I am expert and working with HTML,CSS,JavaScript, PHP and MySql for more than 2 years experience."/>
-        <meta property="og:url" content="https://khumam.id"/>
-        <meta property="og:title" content="Khoerul Umam"/>
-        <meta property="og:description" content="Hi I'm a web developer. Love sharing and learn something new. Hopefully we can be a friend."/>
-        <meta property="og:image" content="https://khumam.mo.cloudinary.net/photo.jpeg"/>
+        <meta name="description" content="Fastcard.dev helps you understand the basic knowledge about everything in the developer world."/>
+        <meta property="og:url" content="https://fastcard.dev"/>
+        <meta property="og:title" content="Developer Fastcard"/>
+        <meta property="og:description" content="Fastcard.dev helps you understand the basic knowledge about everything in the developer world."/>
+        <meta property="og:image" content="https://fastcard.dev/favicon.png"/>
         <meta name="twitter:card" content="summary_large_image"/>
-        <meta property="twitter:domain" content="khumam.id"/>
-        <meta property="twitter:url" content="https://khumam.id"/>
-        <meta name="twitter:title" content="Khoerul Umam"/>
-        <meta name="twitter:description" content="Hi I'm a web developer. Love sharing and learn something new. Hopefully we can be a friend."/>
+        <meta property="twitter:domain" content="fastcard.dev"/>
+        <meta property="twitter:url" content="https://fastcard.dev"/>
+        <meta name="twitter:title" content="Developer Fastcard"/>
+        <meta name="twitter:description" content="Fastcard.dev helps you understand the basic knowledge about everything in the developer world."/>
         <meta name="twitter:image" content=""></meta>
       </Head>
       <main className="p-5 md:p-0">
         <div className="bg-bg-slate-900">
           <nav className="container mx-auto py-5 flex justify-between items-center">
             <div>
-              <Link href="https://khumam.id">
+              <Link href="https://fastcard.dev">
                 <Image src="/icons/logo.svg" alt="Flashcard" width={22} height={22}></Image>
               </Link>
             </div>
@@ -46,7 +46,7 @@ const Base: NextPage<Props> = ({
         </div>
         {children}
         <div className="text-center py-12">
-          <p className="text-zinc-500">Copyrights &copy; Khoerul Umam 2023</p>
+          <p className="text-zinc-500">Copyrights &copy; Fastcard 2023</p>
         </div>
       </main>
     </>
