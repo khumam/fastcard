@@ -13,7 +13,7 @@ const Base: NextPage<Props> = ({
   return (
     <>
       <Head>
-        <title>Flashcard | Developer Guide</title>
+        <title>Fastcard | Developer Guide</title>
         <link rel="icon" type="image/png" href="/favicon.png" />
         <meta name="description" content="Fastcard.dev helps you understand the basic knowledge about everything in the developer world."/>
         <meta property="og:url" content="https://fastcard.dev"/>
