@@ -14,7 +14,7 @@ const CarouselStack: NextPage<Props> = ({
   materials
 }) => {
   return (
-    <div className="container mx-auto cursor-pointer">
+    <div className="container-fluid md:container md:mx-auto px-6 md:px-unset cursor-pointer">
       <Swiper
         centeredSlides
         slidesPerView={1}
