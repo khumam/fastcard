@@ -8,11 +8,12 @@ import { type NextPage } from "next";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { type Code, type Material } from "@prisma/client";
 import { EffectFlip } from 'swiper/modules';
-import { CopyBlock, dracula } from "react-code-blocks";
 import { useCallback, useRef } from "react";
+import { materialDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 import "swiper/css";
 import 'swiper/css/effect-flip';
+import ReactSyntaxHighlighter from "react-syntax-highlighter";
 
 interface Props {
   material: Material | undefined
@@ -35,23 +36,15 @@ const CarouselCardEffect: NextPage<Props> = ({
     swiperRef.current.swiper.slidePrev();
   }, []);
 
-  const codeBlockProps = {
-    text: code?.codes,
-    language: code?.language as string,
-    showLineNumbers: false,
-    theme: dracula,
-    wrapLines: true
-  };
-
   return (
     <Swiper
       init={false}
       ref={swiperRef}
-      className="h-full doubleswiper"
+      className="doubleswiper"
       effect={'flip'}
       modules={[EffectFlip]}>
-        <SwiperSlide className="h-full">
-        <div className="bg-white p-10 h-full rounded border border-zinc-200 flex flex-col justify-between gap-5">
+        <SwiperSlide className="">
+        <div className="bg-white p-10 rounded border border-zinc-200 flex flex-col justify-between gap-5 min-h-[390px] overflow-auto">
           <div>
             <h1 className="text-2xl font-medium text-gray-600 mb-3">{material?.title}</h1>
             <p className="font-normal text-md text-gray-400">{material?.content}</p>
@@ -66,11 +59,11 @@ const CarouselCardEffect: NextPage<Props> = ({
           </div>
           </div>
         </SwiperSlide>
-        <SwiperSlide className="h-full">
-          <div className="bg-white p-10 h-full rounded border border-zinc-200 flex flex-col justify-between gap-5" onClick={handlePrev}>
+        <SwiperSlide className="">
+          <div className="bg-white p-10 rounded border border-zinc-200 flex flex-col justify-between gap-5" onClick={handlePrev}>
             <div>
               <h1 className="text-2xl font-medium text-gray-600 mb-3">{code?.title}</h1>
-              <CopyBlock {...codeBlockProps} />
+              <ReactSyntaxHighlighter style={materialDark} showLineNumbers wrapLongLines language={code?.language}>{code?.codes as string}</ReactSyntaxHighlighter>
             </div>
             <div className="w-full flex items-end gap-1 justify-end pt-8">
               <button onClick={handlePrev} className="text-zinc-500 flex gap-1">

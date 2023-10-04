@@ -27,12 +27,17 @@ const Base: NextPage<Props> = ({
         <meta name="twitter:description" content="Fastcard.dev helps you understand the basic knowledge about everything in the developer world."/>
         <meta name="twitter:image" content=""></meta>
       </Head>
-      <main className="p-5 md:p-0">
+      <main>
         <div className="bg-bg-slate-900">
           <nav className="container mx-auto py-5 flex justify-center md:justify-between items-center">
-            <div>
+            <div className="hidden md:block">
               <Link href="https://fastcard.dev">
                 <Image src="/icons/logo.svg" alt="Flashcard" width={22} height={22}></Image>
+              </Link>
+            </div>
+            <div className="block md:hidden">
+              <Link href="https://fastcard.dev">
+                <Image src="/icons/logo.svg" alt="Flashcard" width={40} height={40}></Image>
               </Link>
             </div>
             <ul className="hidden md:flex items-center justify-center gap-6 text-zinc-500">

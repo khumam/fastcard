@@ -10,7 +10,7 @@ const ContentDouble: NextPage<Props> = ({
   material
 }) => {
   return (
-    <div className="h-full">
+    <div>
       <CarouselCardEffect material={material} code={material.code}></CarouselCardEffect>
     </div>
   );
