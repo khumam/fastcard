@@ -9,11 +9,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { type Code, type Material } from "@prisma/client";
 import { EffectFlip } from 'swiper/modules';
 import { useCallback, useRef } from "react";
-import { materialDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { materialDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 import "swiper/css";
 import 'swiper/css/effect-flip';
-import ReactSyntaxHighlighter from "react-syntax-highlighter";
 
 interface Props {
   material: Material | undefined
@@ -63,7 +63,7 @@ const CarouselCardEffect: NextPage<Props> = ({
           <div className="bg-white p-10 rounded border border-zinc-200 flex flex-col justify-between gap-5" onClick={handlePrev}>
             <div>
               <h1 className="text-2xl font-medium text-gray-600 mb-3">{code?.title}</h1>
-              <ReactSyntaxHighlighter style={materialDark} showLineNumbers wrapLongLines language={code?.language}>{code?.codes as string}</ReactSyntaxHighlighter>
+              <SyntaxHighlighter style={materialDark} showLineNumbers wrapLongLines language={code?.language}>{code?.codes as string}</SyntaxHighlighter>
             </div>
             <div className="w-full flex items-end gap-1 justify-end pt-8">
               <button onClick={handlePrev} className="text-zinc-500 flex gap-1">
