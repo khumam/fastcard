@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-zinc-900
+  @apply bg-gradient-to-tr from-slate-950 to-slate-900 min-h-screen w-full
 }
 
  .swiper-slide {

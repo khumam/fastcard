@@ -24,9 +24,9 @@ const Home: NextPage = () => {
         </div>
         <div>
           <div className="flex items-center pt-10 md:pt-20 flex-col text-center">
-            <h1 className="text-4xl md:text-6xl text-transparent bg-gradient-to-tr from-indigo-400 to-indigo-600 font-medium bg-clip-text mb-6">Developer <i>Fast</i> Card</h1>
+            <h1 className="text-4xl md:text-6xl text-transparent bg-gradient-to-b to-indigo-700 from-indigo-400 font-extrabold bg-clip-text mb-6">Developer <i>Fast</i> Card</h1>
             <div className="md:container">
-              <p className="text-zinc-500 text-sm md:text-md font-light"><b>Fastcard.dev</b> helps you understand the basic knowledge about everything in the developer world. We as community have also built this platform to guide you if you already know the roadmap for your journey. Start exploring, or you can also contribute</p>
+              <p className="text-slate-500 text-lg md:text-md font-normal"><b>Fastcard.dev</b> helps you understand the basic knowledge about everything in the developer world. We as community have also built this platform to guide you if you already know the roadmap for your journey. Start exploring, or you can also contribute</p>
             </div>
           </div>
         </div>
@@ -34,7 +34,7 @@ const Home: NextPage = () => {
           !isCategoryLoading && categories?.map((item) => {
             return <div className="mt-16 md:container mx-auto" key={item.id}>
               <CategoryStack name={item.name}></CategoryStack>
-              <div className="grid grid-cols-2 md:grid-cols-3 mx-auto gap-6 mt-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 mx-auto gap-6 mt-4">
                 {
                   item.Course?.map((course: Course) => {
                     return <Card key={course.id} name={course.title} id={course.id}></Card>

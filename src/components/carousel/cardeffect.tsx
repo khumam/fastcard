@@ -46,8 +46,8 @@ const CarouselCardEffect: NextPage<Props> = ({
         <SwiperSlide className="">
         <div className="bg-white p-10 rounded border border-zinc-200 flex flex-col justify-between gap-5 min-h-[390px] overflow-auto">
           <div>
-            <h1 className="text-2xl font-medium text-gray-600 mb-3">{material?.title}</h1>
-            <p className="font-normal text-md text-gray-400">{material?.content}</p>
+            <h1 className="text-4xl font-medium text-slate-600 mb-4">{material?.title}</h1>
+            <p className="font-normal dium text-lg text-slate-400">{material?.content}</p>
           </div>
           <div className="w-full flex items-end gap-1 justify-end pt-8">
             <button onClick={handleNext} className="text-zinc-500 flex gap-1">
@@ -62,7 +62,7 @@ const CarouselCardEffect: NextPage<Props> = ({
         <SwiperSlide className="">
           <div className="bg-white p-10 rounded border border-zinc-200 flex flex-col justify-between gap-5" onClick={handlePrev}>
             <div>
-              <h1 className="text-2xl font-medium text-gray-600 mb-3">{code?.title}</h1>
+              <h1 className="text-2xl font-medium text-slate-600 mb-3">{code?.title}</h1>
               <SyntaxHighlighter style={materialDark} showLineNumbers wrapLongLines language={code?.language}>{code?.codes as string}</SyntaxHighlighter>
             </div>
             <div className="w-full flex items-end gap-1 justify-end pt-8">
