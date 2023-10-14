@@ -1,10 +1,10 @@
 import { createTRPCRouter, publicProcedure } from "u/server/api/trpc";
 import { z } from "zod";
-export const visitorRouter = createTRPCRouter({
+export const shareRouter = createTRPCRouter({
   get: publicProcedure
     .input(z.object({ id: z.string() }))
     .query(({ ctx, input }) => {
-      return ctx.db.courseVisitor.findFirst({
+      return ctx.db.courseShare.findFirst({
         where: {
           courseId: input.id
         },
@@ -13,7 +13,7 @@ export const visitorRouter = createTRPCRouter({
   upsert: publicProcedure
     .input(z.object({ id: z.string() }))
     .mutation(async ({ ctx, input }) => {
-      return await ctx.db.courseVisitor.upsert({
+      return await ctx.db.courseShare.upsert({
         where: {
           courseId: input.id
         },

@@ -15,8 +15,10 @@ const Card: NextPage = () => {
   const router = useRouter();
   const [isCarousel, setIsCarousel] = useState(true);
   const [isCopied, setIsCopied] = useState(false);
+  const { mutate } = api.shareRouter.upsert.useMutation();
   const { data, isLoading } = api.cardRouter.get.useQuery({ id: router.query.id as string });
   const visitor = api.visitorRouter.get.useQuery({ id: router.query.id as string });
+  const sharedata = api.shareRouter.get.useQuery({ id: router.query.id as string });
   const currentUrl = "https://fastcard.dev/card/" + data?.id;
 
   const handleBack = () => {
@@ -28,10 +30,15 @@ const Card: NextPage = () => {
   }
 
   const handleCopy = () => {
+    handleShare();
     setIsCopied(true);
     setTimeout(() => {
       setIsCopied(false);
     }, 2000);
+  }
+
+  const handleShare = () => {
+    mutate({ id: router.query.id as string });
   }
   
   return isLoading ? (<Loading />) :  (
@@ -66,9 +73,9 @@ const Card: NextPage = () => {
             <div className="flex gap-4 items-center mb-4 md:mb-0 justify-center md:justify-start">
               <span className="text-slate-600">{data?.materials.length} cards</span>
               <span>·</span>
-              <span className="text-slate-600">{visitor?.data?.total} reads</span>
+              <span className="text-slate-600">{visitor?.data?.total ?? 0} reads</span>
               <span>·</span>
-              <span className="text-slate-600">0 shares</span>
+              <span className="text-slate-600">{sharedata?.data?.total ?? 0} shares</span>
             </div>
             <div className="flex justify-center md:justify-normal">
               <CopyToClipboard text={currentUrl} onCopy={handleCopy}>

@@ -71,3 +71,13 @@ model CourseVisitor {
 
   @@index([id, courseId])
 }
+
+model CourseShare {
+  id        String    @id @default(cuid())
+  courseId  String    @unique
+  total     Int
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  @@index([id, courseId])
+}
