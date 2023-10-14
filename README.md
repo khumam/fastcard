@@ -1,28 +1,13 @@
-# Create T3 App
+<p align="center">
+  <img src="public/favicon.png" height="128">
+  <h2 align="center"><a href="https://fastcard.dev">Fastcard.dev</a></h2>
+  <p align="center">We want to share from the community to the community various things related to developers, programming, engineering, and other related topics.<p>
+</p>
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+<br>
 
-## What's next? How do I make an app with this?
+# Fastcard for developer
+Fastcard.dev helps you understand the basic knowledge about everything in the developer world. We as community have also built this platform to guide you if you already know the roadmap for your journey. Start exploring, or you can also contribute
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
-
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
-
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
-
-## Learn More
-
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
-
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
-
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
-
-## How do I deploy this?
-
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+# How to contribute
+Go to this link https://github.com/khumam/fastcard/issues/new/choose and please select the Suggest New Card menu. Add your ideas following the requirement data. We will add your idea to the website.
