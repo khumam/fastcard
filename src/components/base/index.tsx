@@ -96,9 +96,9 @@ const Base: NextPage<Props> = ({
             <div className="flex gap-2 items-center mb-4 justify-center">
               <Link href="https://fastcard.dev" className="flex gap-4 items-center">
                 <Image src="/icons/logo.svg" alt="Flashcard" width={30} height={30}></Image>
-                <h1 className="text-slate-400 text-xl">Fastcard.dev</h1>
+                <h1 className="text-slate-200 text-xl">Fastcard.dev</h1>
               </Link>
-              <h1 className="text-xl text-slate-200">by <Link href="https://github.com/khumam" className="bg-blue-700 text-white p-1 rounded hover:bg-blue-800">@khumam</Link></h1>
+              <h1 className="text-xl text-slate-300">by<Link href="https://github.com/khumam" className="bg-blue-700 text-white ml-2 py-1 px-2 rounded hover:bg-blue-800">@khumam</Link></h1>
             </div>
             <div className="md:container">
               <p className="text-slate-500 text-lg">Community created cards, articles, resources and journeys to help you understanding developers, programming, engineering, and other related topics. Inspired by roadmap.sh</p>
