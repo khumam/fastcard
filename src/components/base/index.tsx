@@ -32,6 +32,7 @@ const Base: NextPage<Props> = ({
         <meta name="twitter:title" content="Developer Fastcard"/>
         <meta name="twitter:description" content="Fastcard.dev helps you understand the basic knowledge about everything in the developer world."/>
         <meta name="twitter:image" content=""></meta>
+        <script async src="https://analytics.eu.umami.is/script.js" data-website-id="c2fb6441-988f-401a-aa65-a77c9ab0977e"></script>
       </Head>
       <main>
         <div className="bg-bg-slate-900">
