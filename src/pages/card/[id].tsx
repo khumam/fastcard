@@ -35,7 +35,7 @@ const Card: NextPage = () => {
           <p className="text-slate-500 text-lg">{data?.description}</p>
           <div className="flex gap-3">
             <button className="bg-slate-500 mt-6 text-white py-2 px-6 rounded flex gap-3" onClick={handleIsCarousel}>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z" />
               </svg>
               {isCarousel ? 'Card stack view' : 'Carousel view'}
