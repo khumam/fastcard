@@ -67,7 +67,7 @@ const CarouselStack: NextPage<Props> = ({
           }
         </Swiper>
       </div>
-      <div className="w-full flex justify-end items-center pt-5 gap-4 block md:hidden">
+      <div className="w-full flex justify-end items-center pt-5 gap-4 md:hidden">
         <button className="bg-zinc-300 text-zinc-800 px-6 py-2 rounded" onClick={handleMainPrev}>Prev</button>
         <button className="bg-zinc-300 text-zinc-800 px-6 py-2 rounded" onClick={handleMainNext}>Next</button>
       </div>
