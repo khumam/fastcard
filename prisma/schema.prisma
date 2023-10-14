@@ -61,3 +61,13 @@ model Code {
 
   @@index([id])
 }
+
+model CourseVisitor {
+  id        String    @id @default(cuid())
+  courseId  String    @unique
+  total     Int
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  @@index([id, courseId])
+}

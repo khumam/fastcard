@@ -1,6 +1,7 @@
 import { type NextPage } from "next";
 import { useRouter } from "next/router";
 import { type MouseEvent } from "react";
+import { api } from "u/utils/api";
 
 interface Props {
   id: string
@@ -12,6 +13,7 @@ const Card: NextPage<Props> = ({
   name
 }) => {
   const router = useRouter();
+  const { mutate } = api.visitorRouter.upsert.useMutation();
   const handleOnMouseMove = (
     event: MouseEvent<HTMLDivElement, globalThis.MouseEvent>) => {
     const { currentTarget: target } = event;
@@ -23,12 +25,17 @@ const Card: NextPage<Props> = ({
     target.style.setProperty("--mouse-y", `${y}px`);
   };
 
-  const goToDetail = (id: string): void => {
+  const goToDetail = (): void => {
+    handleVisitorClick();
     void router.push('/card/' + id);
   }
 
+  const handleVisitorClick = () => {
+    mutate({id});
+  }
+
   return (
-    <div className="relative text-lg cursor-pointer bg-slate-800/50 border border-slate-700 py-3 px-5 rounded flex items-center flex-col md:flex-row gap-4 card w-full" onMouseMove={(event) => handleOnMouseMove(event)} onClick={() => goToDetail(id)}>
+    <div className="relative text-lg cursor-pointer bg-slate-800/50 border border-slate-700 py-3 px-5 rounded flex items-center flex-col md:flex-row gap-4 card w-full" onMouseMove={(event) => handleOnMouseMove(event)} onClick={goToDetail}>
       <div className="text-center md:text-left">
         <h1 className="text-slate-400">{name}</h1>
       </div>
