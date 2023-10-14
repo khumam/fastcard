@@ -20,8 +20,6 @@ const Home: NextPage = () => {
   return (
     <Base>
       <div className="relative bg-bg-slate-900 px-6 md:px-0">
-        <div className="absolute w-full h-full bg-pattern -z-10">
-        </div>
         <div>
           <div className="flex items-center pt-10 md:pt-20 flex-col text-center">
             <h1 className="text-4xl md:text-6xl text-transparent bg-gradient-to-b to-indigo-700 from-indigo-400 font-extrabold bg-clip-text mb-6">Developer <i>Fast</i> Card</h1>

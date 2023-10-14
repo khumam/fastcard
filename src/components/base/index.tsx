@@ -33,7 +33,7 @@ const Base: NextPage<Props> = ({
             <nav className="py-8 flex justify-between items-center px-6 md:px-0">
               <div>
                 <Link href="https://fastcard.dev">
-                  <Image src="/icons/logo.svg" alt="Flashcard" width={40} height={40}></Image>
+                  <Image src="/icons/logo.svg" alt="Flashcard" width={30} height={30}></Image>
                 </Link>
               </div>
               <ul className="hidden md:flex items-center justify-center gap-6 text-zinc-500">
@@ -43,7 +43,7 @@ const Base: NextPage<Props> = ({
                 <li><Link className="hover:text-indigo-600 text-xl" href="#">Best Practices</Link></li>
               </ul>
               <button className="hidden hover:text-white md:block px-5 py-3 bg-indigo-800 hover:bg-indigo-700 font-medium text-slate-100 rounded">Contribute</button>
-              <button className="text-white block md:hidden text-xl"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-8 h-8">
+              <button className="text-white block md:hidden text-xl"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" className="w-8 h-8">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25" />
                 </svg>
               </button>
