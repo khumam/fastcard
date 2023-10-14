@@ -19,7 +19,7 @@ const Home: NextPage = () => {
 
   return (
     <Base>
-      <div className="relative bg-bg-slate-900">
+      <div className="relative bg-bg-slate-900 px-6 md:px-0">
         <div className="absolute w-full h-full bg-pattern -z-10">
         </div>
         <div>
