@@ -4,6 +4,7 @@ import { useState } from "react";
 import Base from "u/components/base";
 import CardStack from "u/components/cardstack";
 import CarouselStack from "u/components/carousel";
+import Loading from "u/components/loading";
 import { type Material } from "u/interfaces/material";
 import { api } from "u/utils/api";
 
@@ -11,7 +12,6 @@ const Card: NextPage = () => {
   const router = useRouter();
   const [isCarousel, setIsCarousel] = useState(true);
   const { data, isLoading } = api.cardRouter.get.useQuery({id: router.query.id as string});
-  console.log(isLoading);
 
   const handleBack = () => {
     router.back();
@@ -21,7 +21,7 @@ const Card: NextPage = () => {
     setIsCarousel(!isCarousel);
   }
   
-  return (
+  return isLoading ? (<Loading />) :  (
     <Base>
       <div className="bg-slate-50">
         <div className="px-6 md:px-unset md:container md:mx-auto py-8">
