@@ -8,19 +8,19 @@ body {
 }
 
 .maincard {
-  @apply prose
+  @apply p-10
 }
 
 .maincard > h2 {
-  @apply text-slate-800
+  @apply text-slate-800 text-2xl mb-4 font-bold
 }
 
 .maincard > p {
-  @apply text-slate-600
+  @apply text-slate-500
 }
 
 .maincard > pre {
-  @apply bg-slate-900 text-slate-50 p-4 rounded
+  @apply rounded mt-8
 }
 
  .swiper-slide {
