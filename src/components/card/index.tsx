@@ -6,11 +6,13 @@ import { api } from "u/utils/api";
 interface Props {
   id: string
   name: string
+  slug: string
 }
 
 const Card: NextPage<Props> = ({
   id,
-  name
+  name,
+  slug
 }) => {
   const router = useRouter();
   const { mutate } = api.visitorRouter.upsert.useMutation();
@@ -27,7 +29,7 @@ const Card: NextPage<Props> = ({
 
   const goToDetail = (): void => {
     handleVisitorClick();
-    void router.push('/card/' + id);
+    void router.push('/card/' + slug);
   }
 
   const handleVisitorClick = () => {

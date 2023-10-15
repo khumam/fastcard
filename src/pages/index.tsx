@@ -35,10 +35,10 @@ const Home: NextPage = () => {
               !isCategoryLoading && categories?.map((item) => {
                 return <div className="mt-16 md:container mx-auto" key={item.id}>
                   <CategoryStack name={item.name}></CategoryStack>
-                  <div className="grid grid-cols-1 md:grid-cols-3 mx-auto gap-6 mt-8">
+                  <div className="grid grid-cols-1 md:grid-cols-3 mx-auto gap-6 mt-4">
                     {
                       item.Course?.map((course: Course) => {
-                        return <Card key={course.id} name={course.title} id={course.id}></Card>
+                        return <Card key={course.id} name={course.title} id={course.id} slug={course.slug}></Card>
                       })
                     }
                   </div>
