@@ -1,17 +1,17 @@
 import { type NextPage } from "next";
-import ContentSingle from "./single";
-import ContentDouble from "./double";
-import { type Material } from "u/interfaces/material";
+import Markdown from "react-markdown";
 
 interface Props {
-  material: Material
+  material: string
 }
 const Content: NextPage<Props> = ({
   material
 }) => {
-  return (material.codeId == null)
-    ? <ContentSingle material={material}></ContentSingle>
-    : <ContentDouble material={material}></ContentDouble>
+  return (
+    <div className="bg-white px-10 border border-zinc-200 rounded min-h-[390px] overflow-auto maincard h-full">
+      <Markdown>{material}</Markdown>
+    </div>
+  );
 }
 
 export default Content;

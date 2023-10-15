@@ -13,6 +13,7 @@ datasource db {
 
 model Category {
   id        String   @id @default(cuid())
+  slug      String
   name      String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -23,43 +24,18 @@ model Category {
 
 model Course {
   id          String     @id @default(cuid())
+  slug        String
   title       String
   categoryId  String
   category    Category   @relation(fields: [categoryId], references: [id])
-  description String
+  description String     @db.Text
   icon        String
-  materials   Material[]
+  materials   String     @db.Text
+  author      String
   createdAt   DateTime   @default(now())
   updatedAt   DateTime   @updatedAt
 
   @@index([id, categoryId])
-}
-
-model Material {
-  id        String   @id @default(cuid())
-  title     String
-  content   String   @db.Text
-  sequence  String
-  courseId  String
-  course    Course   @relation(fields: [courseId], references: [id])
-  code      Code?    @relation(fields: [codeId], references: [id])
-  codeId    String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  @@index([id, courseId])
-}
-
-model Code {
-  id        String     @id @default(cuid())
-  title     String
-  codes     String     @db.Text
-  language  String
-  createdAt DateTime   @default(now())
-  updatedAt DateTime   @updatedAt
-  Material  Material[]
-
-  @@index([id])
 }
 
 model CourseVisitor {
