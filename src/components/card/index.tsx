@@ -37,8 +37,8 @@ const Card: NextPage<Props> = ({
   }
 
   return (
-    <div className="relative text-lg cursor-pointer bg-slate-800/50 border border-slate-700 py-3 px-5 rounded flex items-center flex-col md:flex-row gap-4 card w-full" onMouseMove={(event) => handleOnMouseMove(event)} onClick={goToDetail}>
-      <div className="text-center md:text-left">
+    <div className="relative text-lg cursor-pointer bg-slate-800/50 border border-slate-700 py-3 px-5 rounded flex items-center flex-row gap-4 card w-full" onMouseMove={(event) => handleOnMouseMove(event)} onClick={goToDetail}>
+      <div className="text-left">
         <h1 className="text-slate-400">{name}</h1>
       </div>
     </div>
