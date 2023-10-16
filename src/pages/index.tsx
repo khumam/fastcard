@@ -19,7 +19,7 @@ const Home: NextPage = () => {
   const { categories, isCategoryLoading } = CategoryView();
 
   return isCategoryLoading ? (<Loading />) : (
-    <Base>
+    <Base title="Developer Fastcard" description="Fastcard.dev helps you understand the basic knowledge about everything in the developer world.">
       <div className="min-h-screen">
         <div className="relative bg-bg-slate-900 px-6 md:px-0">
           <div>

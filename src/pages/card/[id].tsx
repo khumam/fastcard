@@ -35,7 +35,7 @@ const Card: NextPage = () => {
   }
   
   return card?.isLoading ? (<Loading />) :  (
-    <Base>
+    <Base title={card?.data?.title} description={card?.data?.description}>
       <div className="bg-slate-50 border-b border-slate-300">
         <div className="px-6 md:px-unset md:container md:mx-auto py-8">
           <button className="mb-6 text-slate-600 text-lg rounded flex items-center gap-3" onClick={handleBack}>
