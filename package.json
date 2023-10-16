@@ -18,6 +18,7 @@
     "@trpc/next": "^10.37.1",
     "@trpc/react-query": "^10.37.1",
     "@trpc/server": "^10.37.1",
+    "lucide-react": "^0.287.0",
     "next": "^13.4.19",
     "react": "18.2.0",
     "react-copy-to-clipboard": "^5.1.0",

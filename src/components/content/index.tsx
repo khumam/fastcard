@@ -10,7 +10,6 @@ interface Props {
 const Content: NextPage<Props> = ({
   material
 }) => {
-  console.log(material);
   return (
     <div className="bg-white border border-zinc-200 rounded min-h-[390px] overflow-auto maincard h-full">
       <Markdown remarkPlugins={[gfm]} components={{

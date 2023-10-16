@@ -14,7 +14,6 @@ const Card: NextPage<Props> = ({
   name,
   slug
 }) => {
-  const router = useRouter();
   const { mutate } = api.visitorRouter.upsert.useMutation();
   const handleOnMouseMove = (
     event: MouseEvent<HTMLDivElement, globalThis.MouseEvent>) => {
@@ -27,21 +26,18 @@ const Card: NextPage<Props> = ({
     target.style.setProperty("--mouse-y", `${y}px`);
   };
 
-  const goToDetail = (): void => {
-    handleVisitorClick();
-    void router.push('/card/' + slug);
-  }
-
   const handleVisitorClick = () => {
     mutate({id});
   }
 
   return (
-    <div className="relative text-lg cursor-pointer bg-slate-800/50 border border-slate-700 py-3 px-5 rounded flex items-center flex-row gap-4 card w-full" onMouseMove={(event) => handleOnMouseMove(event)} onClick={goToDetail}>
-      <div className="text-left">
-        <h1 className="text-slate-400">{name}</h1>
+    <a href={"card/" + slug}>
+      <div className="relative text-lg cursor-pointer bg-slate-800/50 border border-slate-700 py-3 px-5 rounded flex items-center flex-row gap-4 card w-full" onMouseMove={(event) => handleOnMouseMove(event)} onClick={handleVisitorClick}>
+        <div className="text-left">
+          <h1 className="text-slate-400">{name}</h1>
+        </div>
       </div>
-    </div>
+    </a>
   );
 }
 
