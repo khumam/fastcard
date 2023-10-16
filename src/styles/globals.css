@@ -23,6 +23,30 @@ body {
   @apply rounded mt-8
 }
 
+.maincard > table {
+  @apply mt-8 w-full rounded
+}
+
+.maincard > table > thead {
+  @apply bg-slate-300 rounded-t
+}
+
+.maincard > table > thead > tr > th {
+  @apply py-2 px-3 text-slate-600 font-medium
+}
+
+.maincard > table > tbody > tr:nth-child(odd) {
+  @apply bg-slate-100
+}
+
+.maincard > table > tbody > tr > td {
+  @apply py-2 px-3 text-slate-600
+}
+
+.maincard > table::before {
+  @apply overflow-hidden
+}
+
  .swiper-slide {
    height: auto !important;
  }
