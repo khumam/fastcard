@@ -1,5 +1,5 @@
 import { type NextPage } from "next";
-import Head from "next/head";
+import { Helmet } from "react-helmet";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -8,14 +8,10 @@ import { Menu, X } from 'lucide-react';
 
 interface Props {
   children: React.ReactNode[] | React.ReactNode
-  title: string | undefined
-  description: string | undefined
 }
 
 const Base: NextPage<Props> = ({
-  children,
-  title = null,
-  description = null
+  children
 }) => {
   const [isNavbarHidden, setIsNavbarHidden] = useState(true);
   const handleNavbar = () => {
@@ -24,22 +20,22 @@ const Base: NextPage<Props> = ({
 
   return (
     <>
-      <Head>
+      <Helmet>
         <title>Fastcard | Developer Guide</title>
         <link rel="icon" type="image/png" href="/favicon.png" />
-        <meta name="description" content={description ?? "Fastcard.dev helps you understand the basic knowledge about everything in the developer world."}/>
+        <meta name="description" content="Fastcard.dev helps you understand the basic knowledge about everything in the developer world."/>
         <meta property="og:url" content="https://fastcard.dev"/>
-        <meta property="og:title" content={title ?? "Developer Fastcard"} />
-        <meta property="og:description" content={description ?? "Fastcard.dev helps you understand the basic knowledge about everything in the developer world."}/>
+        <meta property="og:title" content="Fastcard | Developer Guide" />
+        <meta property="og:description" content="Fastcard.dev helps you understand the basic knowledge about everything in the developer world."/>
         <meta property="og:image" content="https://fastcard.dev/favicon.png"/>
         <meta name="twitter:card" content="summary_large_image"/>
-        <meta property="twitter:domain" content="fastcard.dev"/>
+        <meta property="twitter:domain" content="https://fastcard.dev"/>
         <meta property="twitter:url" content="https://fastcard.dev"/>
-        <meta name="twitter:title" content={title ?? "Developer Fastcard"}/>
-        <meta name="twitter:description" content={description ?? "Fastcard.dev helps you understand the basic knowledge about everything in the developer world."}/>
+        <meta name="twitter:title" content="Fastcard | Developer Guide"/>
+        <meta name="twitter:description" content="Fastcard.dev helps you understand the basic knowledge about everything in the developer world."/>
         <meta name="twitter:image" content="https://fastcard.dev/favicon.png"></meta>
         <script async src="https://analytics.eu.umami.is/script.js" data-website-id="c2fb6441-988f-401a-aa65-a77c9ab0977e"></script>
-      </Head>
+      </Helmet>
       <main>
         <div className="bg-bg-slate-900">
           <div className="md:container md:mx-auto">

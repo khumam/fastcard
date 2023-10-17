@@ -8,6 +8,7 @@ import Loading from "u/components/loading";
 import { api } from "u/utils/api";
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { MessageSquare, Upload, CheckCircle, ArrowLeft } from 'lucide-react';
+import { Helmet } from "react-helmet";
 
 
 const Card: NextPage = () => {
@@ -36,7 +37,22 @@ const Card: NextPage = () => {
   }
   
   return card?.isLoading ? (<Loading />) :  (
-    <Base title={card?.data?.title} description={card?.data?.description}>
+    <Base>
+       <Helmet>
+        <title>{ card?.data?.title } | Fastcard Developer Guide</title>
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <meta name="description" content={ card?.data?.description }/>
+        <meta property="og:url" content="https://fastcard.dev"/>
+        <meta property="og:title" content={ card?.data?.title  + " | Fastcard Developer Guide" } />
+        <meta property="og:description" content={ card?.data?.description }/>
+        <meta property="og:image" content="https://fastcard.dev/favicon.png"/>
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta property="twitter:domain" content="https://fastcard.dev"/>
+        <meta property="twitter:url" content="https://fastcard.dev"/>
+        <meta name="twitter:title" content={ card?.data?.title  + " | Fastcard Developer Guide" }/>
+        <meta name="twitter:description" content={ card?.data?.description }/>
+        <meta name="twitter:image" content="https://fastcard.dev/favicon.png"></meta>
+      </Helmet>
       <div className="bg-slate-50 border-b border-slate-300">
         <div className="px-6 md:px-unset md:container md:mx-auto py-8">
           <button className="mb-6 text-slate-600 text-lg rounded flex items-center gap-3" onClick={handleBack}>
