@@ -40,7 +40,6 @@ const Card: NextPage = () => {
     <Base>
        <Helmet>
         <title>{ card?.data?.title } | Fastcard Developer Guide</title>
-        <link rel="icon" type="image/png" href="/favicon.png" />
         <meta name="description" content={ card?.data?.description }/>
         <meta property="og:url" content="https://fastcard.dev"/>
         <meta property="og:title" content={ card?.data?.title  + " | Fastcard Developer Guide" } />
