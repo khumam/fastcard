@@ -49,7 +49,7 @@ const Base: NextPage<Props> = ({
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
         <link rel="manifest" href="/favicon/manifest.json" />
         <meta name="msapplication-TileColor" content="#0D1427"></meta>
-        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png"></meta>
+        <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png"></meta>
                                         
         <script async src="https://analytics.eu.umami.is/script.js" data-website-id="c2fb6441-988f-401a-aa65-a77c9ab0977e"></script>
       </Helmet>
