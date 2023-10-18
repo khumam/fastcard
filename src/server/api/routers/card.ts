@@ -12,5 +12,17 @@ export const cardRouter = createTRPCRouter({
           title: 'asc'
         }
       });
+    }),
+  getLatest: publicProcedure
+    .query(({ ctx }) => {
+      return ctx.db.course.findMany({
+        orderBy: {
+          createdAt: 'desc'
+        },
+        take: 2,
+        select: {
+          id: true
+        }
+      })
     })
 });

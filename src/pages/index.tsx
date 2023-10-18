@@ -15,8 +15,19 @@ const CategoryView = (): {
   return {categories: data, isCategoryLoading: isLoading}
 }
 
+const GetLatestCard = (): string[] => {
+  const ids: string[] = [];
+  const { data } = api.cardRouter.getLatest.useQuery();
+  data?.forEach((item) => {
+    ids.push(item.id);
+  });
+  return ids;
+}
+
 const Home: NextPage = () => {
   const { categories, isCategoryLoading } = CategoryView();
+  const latestCard = GetLatestCard();
+  console.log(latestCard);
 
   return isCategoryLoading ? (<Loading />) : (
     <Base>
@@ -38,7 +49,7 @@ const Home: NextPage = () => {
                   <div className="grid grid-cols-1 md:grid-cols-3 mx-auto gap-2 md:gap-6 mt-4">
                     {
                       item.Course?.map((course: Course) => {
-                        return <Card key={course.id} name={course.title} id={course.id} slug={course.slug}></Card>
+                        return <Card key={course.id} name={course.title} id={course.id} slug={course.slug} isNew={latestCard.includes(course.id)}></Card>
                       })
                     }
                   </div>
