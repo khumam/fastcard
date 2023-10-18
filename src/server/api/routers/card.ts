@@ -7,6 +7,9 @@ export const cardRouter = createTRPCRouter({
       return ctx.db.course.findFirst({
         where: {
           slug: input.slug
+        },
+        orderBy: {
+          title: 'asc'
         }
       });
     })

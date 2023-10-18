@@ -20,7 +20,7 @@ const Home: NextPage = () => {
 
   return isCategoryLoading ? (<Loading />) : (
     <Base>
-      <div className="min-h-screen">
+      <div className="min-h-screen pb-24">
         <div className="relative bg-bg-slate-900 px-6 md:px-0">
           <div>
             <div className="flex items-center pt-10 md:pt-20 flex-col text-center">
