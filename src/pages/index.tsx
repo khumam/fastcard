@@ -4,6 +4,7 @@ import Base from "u/components/base";
 import Card from "u/components/card";
 import CategoryStack from "u/components/category";
 import Loading from "u/components/loading";
+import LoadingCard from "u/components/loading/loadingcard";
 import { type Category } from "u/interfaces/category";
 import { type Course } from "u/interfaces/course";
 import { api } from "u/utils/api";
@@ -29,7 +30,7 @@ const Home: NextPage = () => {
   const latestCard = GetLatestCard();
   console.log(latestCard);
 
-  return isCategoryLoading ? (<Loading />) : (
+  return (
     <Base>
       <div className="min-h-screen pb-24">
         <div className="relative bg-bg-slate-900 px-6 md:px-0">
@@ -43,18 +44,20 @@ const Home: NextPage = () => {
           </div>
           <div>
             {
-              !isCategoryLoading && categories?.map((item) => {
-                return <div className="mt-16 md:container mx-auto" key={item.id}>
-                  <CategoryStack name={item.name}></CategoryStack>
-                  <div className="grid grid-cols-1 md:grid-cols-3 mx-auto gap-2 md:gap-6 mt-4">
-                    {
-                      item.Course?.map((course: Course) => {
-                        return <Card key={course.id} name={course.title} id={course.id} slug={course.slug} isNew={latestCard.includes(course.id)}></Card>
-                      })
-                    }
-                  </div>
-                </div>
-              })
+              isCategoryLoading
+                ? <div className="mt-16 md:container mx-auto"><LoadingCard /></div>
+                : categories?.map((item) => {
+                    return <div className="mt-16 md:container mx-auto" key={item.id}>
+                      <CategoryStack name={item.name}></CategoryStack>
+                      <div className="grid grid-cols-1 md:grid-cols-3 mx-auto gap-2 mt-4">
+                        {
+                          item.Course?.map((course: Course) => {
+                            return <Card key={course.id} name={course.title} id={course.id} slug={course.slug} isNew={latestCard.includes(course.id)}></Card>
+                          })
+                        }
+                      </div>
+                    </div>
+                  })
             }
           </div>
         </div>
