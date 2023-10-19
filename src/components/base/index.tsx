@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Github } from 'lucide-react';
 import { Menu, X } from 'lucide-react';
+import OpenGraph from "../opengraph";
 
 interface Props {
   children: React.ReactNode[] | React.ReactNode
@@ -21,19 +22,7 @@ const Base: NextPage<Props> = ({
   return (
     <>
       <Helmet>
-        <title>Fastcard | Developer Guide</title>
         <meta name="theme-color" content="#0D1427" />
-        <meta name="description" content="Fastcard.dev helps you understand the basic knowledge about everything in the developer world."/>
-        <meta property="og:url" content="https://fastcard.dev"/>
-        <meta property="og:title" content="Fastcard | Developer Guide" />
-        <meta property="og:description" content="Fastcard.dev helps you understand the basic knowledge about everything in the developer world."/>
-        <meta property="og:image" content="https://fastcard.dev/favicon.png"/>
-        <meta name="twitter:card" content="summary_large_image"/>
-        <meta property="twitter:domain" content="https://fastcard.dev"/>
-        <meta property="twitter:url" content="https://fastcard.dev"/>
-        <meta name="twitter:title" content="Fastcard | Developer Guide"/>
-        <meta name="twitter:description" content="Fastcard.dev helps you understand the basic knowledge about everything in the developer world."/>
-        <meta name="twitter:image" content="https://fastcard.dev/favicon.png"></meta>
         <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png" />
         <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png" />
         <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png" />
@@ -53,6 +42,13 @@ const Base: NextPage<Props> = ({
                                         
         <script async src="https://analytics.eu.umami.is/script.js" data-website-id="c2fb6441-988f-401a-aa65-a77c9ab0977e"></script>
       </Helmet>
+      <OpenGraph
+        title="Fastcard | Developer Guide"
+        description="We want to share from the community to the community various things related to developers, programming, engineering, and other related topics."
+        url="https://www.fastcard.dev/"
+        image="https://www.fastcard.dev/fastcard.png"
+        altImage="Fastcard.dev helps you understand the basic knowledge about everything in the developer world. We as community have also built this platform to guide you if you already know the roadmap for your journey. Start exploring, or you can also contribute"
+      />
       <main>
         <div className="bg-bg-slate-900">
           <div className="md:container md:mx-auto">

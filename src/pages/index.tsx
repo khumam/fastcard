@@ -3,7 +3,6 @@ import { type NextPage } from "next";
 import Base from "u/components/base";
 import Card from "u/components/card";
 import CategoryStack from "u/components/category";
-import Loading from "u/components/loading";
 import LoadingCard from "u/components/loading/loadingcard";
 import { type Category } from "u/interfaces/category";
 import { type Course } from "u/interfaces/course";
