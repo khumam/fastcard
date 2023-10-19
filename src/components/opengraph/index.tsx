@@ -34,8 +34,6 @@ const OpenGraph: NextPage<Props> = ({
       <meta property="twitter:description" content={description} />
       <meta property="twitter:image" content={image} />
       <meta property="twitter:image:alt" content={altImage} />
-
-
     </Helmet>
   );
 }

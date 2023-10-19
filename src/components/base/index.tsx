@@ -1,17 +1,26 @@
 import { type NextPage } from "next";
-import { Helmet } from "react-helmet";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Github } from 'lucide-react';
 import { Menu, X } from 'lucide-react';
-import OpenGraph from "../opengraph";
+import Head from "next/head";
 
 interface Props {
+  title: string
+  description: string
+  url: string
+  image: string
+  altImage: string
   children: React.ReactNode[] | React.ReactNode
 }
 
 const Base: NextPage<Props> = ({
+  title,
+  description,
+  url,
+  image,
+  altImage,
   children
 }) => {
   const [isNavbarHidden, setIsNavbarHidden] = useState(true);
@@ -21,7 +30,7 @@ const Base: NextPage<Props> = ({
 
   return (
     <>
-      <Helmet>
+      <Head>
         <meta name="theme-color" content="#0D1427" />
         <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png" />
         <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png" />
@@ -39,16 +48,26 @@ const Base: NextPage<Props> = ({
         <link rel="manifest" href="/favicon/manifest.json" />
         <meta name="msapplication-TileColor" content="#0D1427"></meta>
         <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png"></meta>
+
+        <title>{title}</title>
+        <meta name="title" content={title} />
+        <meta name="description" content={description} />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={url} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={image} />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={url} />
+        <meta property="twitter:title" content={title} />
+        <meta property="twitter:description" content={description} />
+        <meta property="twitter:image" content={image} />
+        <meta property="twitter:image:alt" content={altImage} />
                                         
         <script async src="https://analytics.eu.umami.is/script.js" data-website-id="c2fb6441-988f-401a-aa65-a77c9ab0977e"></script>
-      </Helmet>
-      <OpenGraph
-        title="Fastcard | Developer Guide"
-        description="We want to share from the community to the community various things related to developers, programming, engineering, and other related topics."
-        url="https://www.fastcard.dev/"
-        image="https://www.fastcard.dev/fastcard.png"
-        altImage="Fastcard.dev helps you understand the basic knowledge about everything in the developer world. We as community have also built this platform to guide you if you already know the roadmap for your journey. Start exploring, or you can also contribute"
-      />
+      </Head>
       <main>
         <div className="bg-bg-slate-900">
           <div className="md:container md:mx-auto">
