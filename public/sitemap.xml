@@ -9,19 +9,33 @@
 
 <url>
   <loc>https://www.fastcard.dev/</loc>
-  <lastmod>2023-10-17T01:05:54+00:00</lastmod>
+  <lastmod>2023-10-20T01:30:29+00:00</lastmod>
+  <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://www.fastcard.dev/card/php</loc>
-  <lastmod>2023-10-17T01:05:54+00:00</lastmod>
+  <loc>https://www.fastcard.dev/card/mysql</loc>
+  <lastmod>2023-10-20T01:30:29+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.fastcard.dev/card/algorithm</loc>
+  <lastmod>2023-10-20T01:30:29+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.fastcard.dev/card/conditional-statement</loc>
-  <lastmod>2023-10-17T01:05:54+00:00</lastmod>
+  <lastmod>2023-10-20T01:30:29+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.fastcard.dev/card/looping</loc>
-  <lastmod>2023-10-17T01:05:54+00:00</lastmod>
+  <lastmod>2023-10-20T01:30:29+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.fastcard.dev/card/php</loc>
+  <lastmod>2023-10-20T01:30:29+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 
 
